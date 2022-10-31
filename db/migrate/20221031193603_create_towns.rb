@@ -1,6 +1,6 @@
-class CreateCities < ActiveRecord::Migration[7.0]
+class CreateTowns < ActiveRecord::Migration[7.0]
   def change
-    create_table :cities do |t|
+    create_table :towns do |t|
       t.string :name
       t.string :region
       t.string :state
