@@ -13,13 +13,32 @@
   <div class="card">
     <div class="face face1">
       <div class="content">
-        <span class="stars"></span>
-        <h2 class="java">Java</h2>
+      <h2 class="java">Score:</h2>
       <% @towns.each do |town|%>
         <!--<p class="java">Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>-->
-        <h5 class="java">Région :<%= town.region %> </h5>
-        <h5 class="java">Cout :<%= town.cost %></h5>
-        <h5 class="java">Sécurité :<%= town.safety %></h5>
+        <h5 class="java">
+          Cout :
+          <% town.cost.times do %>
+            <% if town.cost >= 4 %>
+             <i class="fa-regular fa-star" style="background-color:#2bde73"></i>
+            <% elsif town.cost == 3 %>
+              <i class="fa-regular fa-star"   style="color: #ffc924"></i>
+            <% else %>
+               <i class="fa-regular fa-star"   style="color: red "></i>
+            <% end %>
+          <% end %>
+        </h5>
+        <h5 class="java">Sécurité :
+          <% town.safety.times do %>
+           <% if town.safety >= 4 %>
+             <i class="fa-regular fa-star" style="background-color:yellow"></i>
+            <% elsif town.safety == 3 %>
+              <i class="fa-regular fa-star" style="background-color: #ffc924"></i>
+            <% else %>
+               <i class="fa-regular fa-star"   style="color: red "></i>
+            <% end %>
+          <% end %>
+        </h5>
         <h5 class="java">Tourisme :<%= town.sightseeing %></h5>
         <h5 class="java">Culture :<%= town.culture %></h5>
         <h5 class="java">Ambiance :<%= town.vibe %></h5>
@@ -27,7 +46,8 @@
     </div>
     <div class="face face2">
       <div class="cards">
-          <h1><%= town.name %></h1>
+          <h1 class="text-center"><%= town.name %> </h1>
+          <h4 class="text-center"><%= town.region %> </h4>
       </div>
     </div>
       <% end %>
