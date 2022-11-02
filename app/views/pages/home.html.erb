@@ -6,3 +6,34 @@
   </div>
 </div>
 
+<div class="container">
+<div class="section">
+  <div class="row">
+  <div class="col-md-3">
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <span class="stars"></span>
+        <h2 class="java">Java</h2>
+      <% @towns.each do |town|%>
+        <!--<p class="java">Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>-->
+        <h5 class="java">Région :<%= town.region %> </h5>
+        <h5 class="java">Cout :<%= town.cost %></h5>
+        <h5 class="java">Sécurité :<%= town.safety %></h5>
+        <h5 class="java">Tourisme :<%= town.sightseeing %></h5>
+        <h5 class="java">Culture :<%= town.culture %></h5>
+        <h5 class="java">Ambiance :<%= town.vibe %></h5>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="cards">
+          <h1><%= town.name %></h1>
+      </div>
+    </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>
+  
+</div>
