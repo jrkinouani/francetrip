@@ -7,53 +7,140 @@
 </div>
 
 <div class="container">
-<div class="section">
-  <div class="row">
-  <div class="col-md-3">
-  <div class="card">
-    <div class="face face1">
-      <div class="content">
-      <h2 class="java">Score:</h2>
-      <% @towns.each do |town|%>
-        <!--<p class="java">Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>-->
-        <h5 class="java">
-          Cout :
-          <% town.cost.times do %>
-            <% if town.cost >= 4 %>
-             <i class="fa-regular fa-star" style="background-color:#2bde73"></i>
-            <% elsif town.cost == 3 %>
-              <i class="fa-regular fa-star"   style="color: #ffc924"></i>
-            <% else %>
-               <i class="fa-regular fa-star"   style="color: red "></i>
-            <% end %>
-          <% end %>
-        </h5>
-        <h5 class="java">Sécurité :
-          <% town.safety.times do %>
-           <% if town.safety >= 4 %>
-             <i class="fa-regular fa-star" style="background-color:yellow"></i>
-            <% elsif town.safety == 3 %>
-              <i class="fa-regular fa-star" style="background-color: #ffc924"></i>
-            <% else %>
-               <i class="fa-regular fa-star"   style="color: red "></i>
-            <% end %>
-          <% end %>
-        </h5>
-        <h5 class="java">Tourisme :<%= town.sightseeing %></h5>
-        <h5 class="java">Culture :<%= town.culture %></h5>
-        <h5 class="java">Ambiance :<%= town.vibe %></h5>
+  <div class="section">
+    <div class="row">
+    <div class="col-md-3">
+    <div class="card">
+      <div class="face face1">
+        <div class="container">
+        <h2 class="java">Score:</h2>
+        <% @towns.each do |town|%>
+          <!--<p class="java">Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>-->
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="java"> Cout :</h5>     
+            </div>
+            <div class="col-md-6">
+              <h5 class="java">
+                <% town.cost.times do %>
+                  <% if town.cost >= 4 %>
+                   <i class="fa-regular fa-star" style="background-color:#2bde73"></i>
+                  <% elsif town.cost == 3 %>
+                    <i class="fa-regular fa-star"   style="color: #ffc924"></i>
+                  <% else %>
+                     <i class="fa-regular fa-star"   style="color: red "></i>
+                  <% end %>
+                <% end %>
+              </h5>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="java">Sécurité :</h5>  
+            </div>
+            <div class="col-md-6">
+             <h5 class="java">
+              <% town.safety.times do %>
+               <% if town.safety >= 4 %>
+                 <i class="fa-regular fa-star" style="background-color:#2bde73"></i>
+                <% elsif town.safety == 3 %>
+                  <i class="fa-regular fa-star" style="background-color:
+                  #ffc924"></i>
+                <% else %>
+                   <i class="fa-regular fa-star"   style="background-color: red "></i>
+                <% end %>
+              <% end %>
+            </h5>
+            </div>    
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+               <h5 class="java">
+               </h5>
+            </div>
+            <div class="col-md-6">
+               <h5 class="java">
+               </h5>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="java">Tourisme </h5>  
+            </div>
+            <div class="col-md-6">
+               <h5 class="java">
+                  <% town.sightseeing.times do %>
+                   <% if town.sightseeing >= 4 %>
+                     <i class="fa-regular fa-star" 
+                     style="background-color:#2bde73"></i>
+                    <% elsif town.sightseeing == 3 %>
+                      <i class="fa-regular fa-star" 
+                      style="background-color: #ffc924"></i>
+                    <% else %>
+                       <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                    <% end %>
+                  <% end %>
+               </h5>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="java">Culture :</h5>
+            </div>
+            <div class="col-md-6">
+               <h5 class="java">
+                 <% town.culture.times do %>
+                   <% if town.culture >= 4 %>
+                     <i class="fa-regular fa-star"
+                     style="background-color:#2bde73"></i>
+                    <% elsif town.culture == 3 %>
+                      <i class="fa-regular fa-star" 
+                      style="background-color: #ffc924"></i>
+                    <% else %>
+                       <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                    <% end %>
+                  <% end %>
+               </h5>
+               </h5>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="java">Ambiance :</h5>
+            </div>
+            <div class="col-md-6">
+               <h5 class="java">
+                <% town.vibe.times do %>
+                   <% if town.vibe >= 4 %>
+                     <i class="fa-regular fa-star" 
+                     style="background-color:#2bde73"></i>
+                    <% elsif town.vibe == 3 %>
+                      <i class="fa-regular fa-star" 
+                      style="background-color: #ffc924"></i>
+                    <% else %>
+                       <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                    <% end %>
+                  <% end %>
+               </h5>
+               </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="cards">
+          <h1 class="text-center"><%= town.name %></h1>
+          <h4 class="text-center"><%= town.region %></h4>
+        </div>
+      </div>
+        <% end %>
       </div>
     </div>
-    <div class="face face2">
-      <div class="cards">
-          <h1 class="text-center"><%= town.name %> </h1>
-          <h4 class="text-center"><%= town.region %> </h4>
-      </div>
-    </div>
-      <% end %>
     </div>
   </div>
-  </div>
-</div>
-  
 </div>
