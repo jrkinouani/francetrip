@@ -9,8 +9,10 @@
 <div class="container mt-5">
     <div class="row">
         <% @towns.each do |town| %>
-    <div class="col-md-4">
-    <div class="card">
+    <div class="col-md-3">
+    <div class="card" style ="background-image: 
+       linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+       url('<%= cl_image_path town.photo.key %>')">
       <div class="face face1">
         <div class="container">
           <!--<p class="java">Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>-->
@@ -136,7 +138,9 @@
           </div>
         </div>
       </div>
-      <div class="face face2">
+      <div class="face face2" style ="background-image: 
+       linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+       url('<%= cl_image_path town.photo.key %>')">
         <div class="cards">
           <h1 class="text-center"><%= town.name %></h1>
           <h4 class="text-center"><%= town.region %></h4>

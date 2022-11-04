@@ -25,12 +25,12 @@ class TownsController < ApplicationController
   end
 
   def update
-    @town = Town.update(params_town)
+    @town.update(params_town)
     redirect_to town_path(@town)
   end
 
   def destroy
-    @town = Town.destroy
+    @town.destroy
     redirect_to town_path status: :see_other
   end
 
@@ -41,6 +41,6 @@ class TownsController < ApplicationController
   end
 
   def params_town
-    params.require(:town).permit(:name, :region, :state, :cost, :safety, :vibe, :culture, :sightseeing)
+    params.require(:town).permit(:name, :region, :state, :cost, :safety, :vibe, :culture, :sightseeing, :photo)
   end
 end
