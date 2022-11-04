@@ -6,14 +6,13 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="section">
+<div class="container mt-5">
     <div class="row">
+        <% @towns.each do |town|%>
     <div class="col-md-4">
     <div class="card">
       <div class="face face1">
         <div class="container">
-        <% @towns.each do |town|%>
           <!--<p class="java">Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>-->
           <div class="row">
             <div class="col-md-6 d-flex justify-content-start ">
@@ -26,9 +25,9 @@
                   <% if town.cost >= 4 %>
                    <i class="fa-regular fa-star" style="background-color:#2bde73"></i>
                   <% elsif town.cost == 3 %>
-                    <i class="fa-regular fa-star"   style="color: #ffc924"></i>
+                    <i class="fa-regular fa-star"   style="background-color: #ffc924"></i>
                   <% else %>
-                     <i class="fa-regular fa-star"   style="color: red "></i>
+                     <i class="fa-regular fa-star"   style="background-color: red "></i>
                   <% end %>
                 <% end %>
               </h5>
@@ -143,9 +142,8 @@
           <h4 class="text-center"><%= town.region %></h4>
         </div>
       </div>
-        <% end %>
       </div>
     </div>
+        <% end %>
     </div>
   </div>
-</div>
