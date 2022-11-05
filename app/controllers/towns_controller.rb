@@ -41,6 +41,6 @@ class TownsController < ApplicationController
   end
 
   def params_town
-    params.require(:town).permit(:name, :region, :state, :cost, :safety, :vibe, :culture, :sightseeing, :photo)
+    params.require(:town).permit(:name, :region, :state, :cost, :safety, :vibe, :culture, :sightseeing, :photo, :gastronomy)
   end
 end
