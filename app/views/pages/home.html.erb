@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-6">
               <h5 class="java">
-                <% town.cost.times do %>
+                <% town.cost&.times do %>
                   <% if town.cost >= 4 %>
                    <i class="fa-regular fa-star" style="background-color:#2bde73"></i>
                   <% elsif town.cost == 3 %>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-md-6">
              <h5 class="java">
-              <% town.safety.times do %>
+              <% town.safety&.times do %>
                <% if town.safety >= 4 %>
                  <i class="fa-regular fa-star" style="background-color:#2bde73"></i>
                 <% elsif town.safety == 3 %>
@@ -76,7 +76,7 @@
             </div>
             <div class="col-md-6">
                <h5 class="java">
-                  <% town.sightseeing.times do %>
+                  <% town.sightseeing&.times do %>
                    <% if town.sightseeing >= 4 %>
                      <i class="fa-regular fa-star" 
                      style="background-color:#2bde73"></i>
@@ -98,7 +98,7 @@
             </div>
             <div class="col-md-6">
                <h5 class="java">
-                 <% town.culture.times do %>
+                 <% town.culture&.times do %>
                    <% if town.culture >= 4 %>
                      <i class="fa-regular fa-star"
                      style="background-color:#2bde73"></i>
@@ -121,7 +121,7 @@
             </div>
             <div class="col-md-6">
                <h5 class="java">
-                <% town.vibe.times do %>
+                <% town.vibe&.times do %>
                    <% if town.vibe >= 4 %>
                      <i class="fa-regular fa-star" 
                      style="background-color:#2bde73"></i>
