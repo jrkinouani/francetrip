@@ -28,7 +28,6 @@ class TownsController < ApplicationController
   def update
     @town.update(params_town)
     redirect_to town_path(@town)
-    end 
   end
 
   def destroy
