@@ -11,6 +11,7 @@ class TownsController < ApplicationController
 
   def create
     @town = Town.new(params_town)
+    point
     if @town.save
       redirect_to town_path(@town)
     else
@@ -27,6 +28,7 @@ class TownsController < ApplicationController
   def update
     @town.update(params_town)
     redirect_to town_path(@town)
+    end 
   end
 
   def destroy
@@ -36,11 +38,16 @@ class TownsController < ApplicationController
 
   private
 
+  def point
+    @town.score = @town.cost + @town.safety + @town.vibe + @town.culture
+    @town.sightseeing
+  end
+
   def set_town
     @town = Town.find(params[:id])
   end
 
   def params_town
-    params.require(:town).permit(:photo, :name, :region, :state, :cost, :safety, :vibe, :culture, :sightseeing)
+    params.require(:town).permit(:photo, :name, :region, :state, :cost, :safety, :vibe, :culture, :sightseeing, :score)
   end
 end
