@@ -6,7 +6,13 @@ class TownsController < ApplicationController
   end
 
   def index
-    @towns = Town.all
+    if params[:query].present?
+      sql_query ="name ILIKE :query OR category ILIKE :query OR 
+      geography ILIKE :query"
+      @towns = Town.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @towns = Town.all
+    end
   end
 
   def create
@@ -47,6 +53,8 @@ class TownsController < ApplicationController
   end
 
   def params_town
-    params.require(:town).permit(:photo, :name, :region, :state, :cost, :safety, :vibe, :culture, :sightseeing, :score)
+    params.require(:town).permit(:photo, :name, :region, 
+      :state, :cost, :safety, :vibe, :culture,
+       :sightseeing, :score, :category, :geography)
   end
 end

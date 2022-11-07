@@ -7,6 +7,10 @@
 				<%= f.input :photo, as: :file %>
 				<%= f.input :region %>
 				<%= f.input :state %>
+				<%= f.input :category , collection:["Ville","Village",
+					"Campagne"]%>
+				<%= f.input :geography , collection:["Plage","Montagne",
+					"Haute-Montagne"]%>
 				<%= f.input :cost %>
 				<%= f.input :vibe %>
 				<%= f.input :safety %>
