@@ -53,8 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_07_180845) do
     t.integer "culture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "cover"
-    t.integer "food"
+    t.integer "gastronomy"
     t.integer "score"
     t.string "category"
     t.string "geography"
