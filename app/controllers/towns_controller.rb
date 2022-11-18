@@ -1,4 +1,4 @@
-class TownsController < ApplicationController
+  class TownsController < ApplicationController
   before_action :set_town, only: %i[edit show destroy update]
 
   def new
@@ -8,7 +8,7 @@ class TownsController < ApplicationController
   def index
     if params[:query].present?
       sql_query ="name ILIKE :query OR category ILIKE :query OR 
-      geography ILIKE :query"
+      geography ILIKE :query OR region ILIKE :query OR state ILIKE :query"
       @towns = Town.where(sql_query, query: "%#{params[:query]}%")
     else
       @towns = Town.all

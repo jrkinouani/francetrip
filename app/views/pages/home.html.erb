@@ -1,12 +1,39 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1584109504427-f9b960c94cdb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);">
-  <div class="container">
+  <div class="container text-center">
     <h1><strong>Voyager en France selon vos critères</strong></h1>
     <p>Découvrez les meilleurs villes pour vos futurs vacances </p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <div class="col-md-4 offset-md-4">
+       <%= form_with url: towns_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
+        id:"search_query",
+        placeholder: "Entrez un critère, ex :'ville'"
+      %>
+      <button name="button" type="submit" class="btn btn-primary">
+      <i class="fas fa-search"></i> 
+    </button>
+    <% end %>
+    </div>
   </div>
 </div>
 
 <div class="container mt-5">
+  <div class="card-body mb-4">
+        <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("mountain").raw %>La montagne</button>
+        <a href="/towns?query=Paris">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("ocean").raw %>La mer</button>
+        </a>
+        <a href="/towns?query=campagne">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("evergreen_tree").raw %>La campagne</button>  
+        </a>
+        <a href="/towns?query=ville">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("city_sunrise").raw %>La ville</button> 
+        </a>
+        <a href="/towns?query=Outre-mer">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("sunny").raw %>Les Outre-mer</button>   
+        </a>
+  </div>
   <div class="row">
     <% position = 1; @towns.each do |town| %>
     <div class="col-md-3">
@@ -16,7 +43,7 @@
         <div class="face face1">
           <div class="container">
             <div class="d">
-            <%#= town.point.to_i %> <%= link_to "voir plus", town_path(town.id) %></h5>
+            <h5><%#= town.point.to_i %> <%= link_to "voir plus", town_path(town.id) %></h5>
             </div>
             <h5>
             <div class="row">
@@ -61,17 +88,6 @@
             </div>
 
             <div class="row">
-              <div class="col-md-6">
-                 <h5 class="java">
-                 </h5>
-              </div>
-              <div class="col-md-6">
-                 <h5 class="java px-2">
-                 </h5>
-              </div>
-            </div>
-
-            <div class="row">
               <div class="col-md-6 d-flex justify-content-start">
                 <h5><%= Emoji.find_by_alias("man").raw %></h5>
                 <h5><%= Emoji.find_by_alias("woman").raw %></h5>
@@ -87,7 +103,7 @@
                         <i class="fa-regular fa-star" 
                         style="background-color: #ffc924"></i>
                       <% else %>
-                         <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                         <i class="fa-regular fa-star" style="background-color: red "></i>
                       <% end %>
                     <% end %>
                  </h5>
@@ -109,7 +125,7 @@
                         <i class="fa-regular fa-star" 
                         style="background-color: #ffc924"></i>
                       <% else %>
-                         <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                         <i class="fa-regular fa-star" style="background-color: red "></i>
                       <% end %>
                     <% end %>
                  </h5>
@@ -131,7 +147,7 @@
                         <i class="fa-regular fa-star" 
                         style="background-color: #ffc924"></i>
                       <% else %>
-                         <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                         <i class="fa-regular fa-star"style="background-color: red "></i>
                       <% end %>
                     <% end %>
                  </h5>
