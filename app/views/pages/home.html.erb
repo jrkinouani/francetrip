@@ -8,11 +8,19 @@
 
 <div class="container mt-5">
   <div class="card-body mb-4">
-        <button type="button" class="btn btn-secondary"><%= Emoji.find_by_alias("mountain").raw %>La montagne</button>
-        <button type="button" class="btn btn-primary"><%= Emoji.find_by_alias("palm_tree").raw %>La mer</button>
-        <button type="button" class="btn btn-success">La campagne</button>
-        <button type="button" class="btn btn-warning">La ville</button>
-        <button type="button" class="btn btn-info">Les Outre-mer</button>   
+        <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("mountain").raw %>La montagne</button>
+        <a href="/towns?query=Paris">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("ocean").raw %>La mer</button>
+        </a>
+        <a href="/towns?query=campagne">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("evergreen_tree").raw %>La campagne</button>  
+        </a>
+        <a href="/towns?query=ville">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("city_sunrise").raw %>La ville</button> 
+        </a>
+        <a href="/towns?query=Outre-mer">
+         <button type="button" class="btn btn-outline-secondary"><%= Emoji.find_by_alias("sunny").raw %>Les Outre-mer</button>   
+        </a>
   </div>
   <div class="row">
     <% position = 1; @towns.each do |town| %>
@@ -83,7 +91,7 @@
                         <i class="fa-regular fa-star" 
                         style="background-color: #ffc924"></i>
                       <% else %>
-                         <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                         <i class="fa-regular fa-star" style="background-color: red "></i>
                       <% end %>
                     <% end %>
                  </h5>
@@ -105,7 +113,7 @@
                         <i class="fa-regular fa-star" 
                         style="background-color: #ffc924"></i>
                       <% else %>
-                         <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                         <i class="fa-regular fa-star" style="background-color: red "></i>
                       <% end %>
                     <% end %>
                  </h5>
@@ -127,7 +135,7 @@
                         <i class="fa-regular fa-star" 
                         style="background-color: #ffc924"></i>
                       <% else %>
-                         <i class="fa-regular fa-star"                  style="background-color: red "></i>
+                         <i class="fa-regular fa-star"style="background-color: red "></i>
                       <% end %>
                     <% end %>
                  </h5>
